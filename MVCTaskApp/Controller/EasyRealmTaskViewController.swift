@@ -10,39 +10,40 @@ import RealmSwift
 import SnapKit
 
 final class EasyMemoViewController: UIViewController {
-    var memoArray: Results<Memo>!
-    
-    private(set) lazy var myView = MemoAddView()
+
     var memoModel: MemoModel?
-    
-    fileprivate var tableView: UITableView!
+    private let myView = MemoAddView()
+    private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let realm = try! Realm()
-        self.memoArray = realm.objects(Memo.self)
         
         view.backgroundColor = .green
-        
-        
+
+        setupMyView()
+        setupTableView()
+    }
+
+    private func setupMyView() {
         myView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 350)
         myView.delegate = self
-        
-        let PointOfTableView = CGPoint(x: view.bounds.minX, y: view.bounds.minY + 350)
-        let RectOfTableView = CGRect(origin: PointOfTableView, size: CGSize(width: view.bounds.size.width, height: view.bounds.height-350))
-        tableView = UITableView(frame: RectOfTableView, style: .plain)
+        view.addSubview(myView)
+    }
+
+    private func setupTableView() {
+        let pointOfTableView = CGPoint(x: view.bounds.minX, y: view.bounds.minY + 350)
+        let rectOfTableView = CGRect(origin: pointOfTableView, size: CGSize(width: view.bounds.size.width, height: view.bounds.height-350))
+        tableView = UITableView(frame: rectOfTableView, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.addSubViews(myView, tableView)
-        
+        view.addSubview(tableView)
     }
 }
 
 extension EasyMemoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return memoModel?.memos.count ?? 0
     }
 
