@@ -10,12 +10,13 @@ import RealmSwift
 
 class MemoModel {
     
-    var memos: Results<Memo>!
-    
+    private(set) var memos: Results<Memo>!
+    //private(set)にすることで、外から更新できないようにできる。
+
     init() {
         print("init")
         let realm = try! Realm()
-        self.memos = realm.objects(Memo.self)
+        memos = realm.objects(Memo.self)
     }
     
     func addMemo(text: String) {

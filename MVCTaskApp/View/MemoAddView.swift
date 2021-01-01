@@ -15,37 +15,35 @@ protocol MemoAddViewDelegate: class {
 
 class MemoAddView: UIView {
     
-     lazy var textField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "入力してください"
-        textField.delegate = self
-        return textField
-    }()
-    
-     lazy var button: UIButton = {
-        let button = UIButton()
-        button.setTitle("追加する", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let textField = UITextField()
+    private let button = UIButton()
     
     weak var delegate: MemoAddViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubViews(textField, button)
-        setLayout()
+        setupTextField()
+        setupButton()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setLayout() {
+    private func setupTextField() {
+        textField.placeholder = "入力してください"
+        textField.delegate = self
+        addSubview(textField)
         textField.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+    }
+    
+    private func setupButton() {
+        button.setTitle("追加する", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        addSubview(button)
         button.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalTo(textField.snp.bottom).offset(30)

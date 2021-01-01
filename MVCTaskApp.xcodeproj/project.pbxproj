@@ -17,6 +17,7 @@
 		473689D22590F2F200131AF5 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473689D12590F2F200131AF5 /* Memo.swift */; };
 		473689D525916B2600131AF5 /* MemoAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 473689D425916B2600131AF5 /* MemoAddView.swift */; };
 		476A040325922A5000A54E63 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A040225922A5000A54E63 /* tableView.swift */; };
+		478DF467259454D700FE7B0B /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 478DF466259454D700FE7B0B /* MyScene.sks */; };
 		607475C04FAFBA034C1ED9A5 /* Pods_MVCTaskApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450466A4380C14D2355FC724 /* Pods_MVCTaskApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		473689D12590F2F200131AF5 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		473689D425916B2600131AF5 /* MemoAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoAddView.swift; sourceTree = "<group>"; };
 		476A040225922A5000A54E63 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
+		478DF466259454D700FE7B0B /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
+		478DF46A2594565000FE7B0B /* GameScene.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GameScene.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		E1FF412C391D5A2D014B495A /* Pods-MVCTaskApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCTaskApp.debug.xcconfig"; path = "Target Support Files/Pods-MVCTaskApp/Pods-MVCTaskApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED056A19E7B81B12D00F0E31 /* Pods-MVCTaskApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCTaskApp.release.xcconfig"; path = "Target Support Files/Pods-MVCTaskApp/Pods-MVCTaskApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +65,7 @@
 		4736892E258C781900131AF5 = {
 			isa = PBXGroup;
 			children = (
+				478DF46A2594565000FE7B0B /* GameScene.playground */,
 				47368983258F88C700131AF5 /* MyPlayground.playground */,
 				47368939258C781900131AF5 /* MVCTaskApp */,
 				47368938258C781900131AF5 /* Products */,
@@ -91,6 +95,7 @@
 				47368945258C781B00131AF5 /* LaunchScreen.storyboard */,
 				47368948258C781B00131AF5 /* Info.plist */,
 				47368967258C8B3900131AF5 /* ExtensionUIView.swift */,
+				478DF466259454D700FE7B0B /* MyScene.sks */,
 			);
 			path = MVCTaskApp;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			files = (
 				47368947258C781B00131AF5 /* LaunchScreen.storyboard in Resources */,
 				47368944258C781B00131AF5 /* Assets.xcassets in Resources */,
+				478DF467259454D700FE7B0B /* MyScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
